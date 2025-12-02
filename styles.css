@@ -138,6 +138,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    background-color: var(--color-background);
 }
 
 body {
@@ -145,9 +146,26 @@ body {
     font-size: var(--font-size-base);
     line-height: var(--line-height-normal);
     color: var(--color-text-primary);
-    background-color: var(--color-background);
+    background-color: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    min-height: 100vh;
+}
+
+.vitruvian-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('leonardo.jpg');
+    background-size: 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.04;
+    z-index: 9999;
+    pointer-events: none;
 }
 
 /* Skip Link for Accessibility */
@@ -178,7 +196,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, var(--color-warm-white) 0%, var(--color-warm-white-off) 100%);
+    background: linear-gradient(135deg, rgba(255, 252, 252, 0.95) 0%, rgba(248, 246, 246, 0.95) 100%);
     border-bottom: 1px solid var(--color-border-light);
     position: sticky;
     top: 0;
@@ -459,7 +477,7 @@ main {
 /* Hero Section */
 .hero-section {
     position: relative;
-    background: linear-gradient(135deg, var(--color-warm-white) 0%, var(--color-primary-light) 100%);
+    background: linear-gradient(135deg, rgba(255, 252, 252, 0.9) 0%, rgba(184, 216, 232, 0.85) 100%);
     overflow: hidden;
 }
 
@@ -482,6 +500,8 @@ main {
         radial-gradient(circle at 20% 80%, rgba(150, 201, 220, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(174, 132, 126, 0.1) 0%, transparent 50%);
     background-size: 400px 400px, 300px 300px;
+    background-position: top left, bottom right;
+    background-repeat: repeat, repeat;
     animation: float 20s ease-in-out infinite;
 }
 
@@ -586,7 +606,7 @@ main {
 
 /* About Section */
 .about-section {
-    background: var(--color-background-alt);
+    background: rgba(248, 246, 246, 0.9);
 }
 
 .about-content {
@@ -656,7 +676,7 @@ main {
 
 /* Services Section */
 .services-section {
-    background: var(--color-background);
+    background: rgba(255, 252, 252, 0.9);
 }
 
 .services-grid {
@@ -729,7 +749,7 @@ main {
 
 /* Team Section */
 .team-section {
-    background: var(--color-background-alt);
+    background: rgba(248, 246, 246, 0.9);
 }
 
 .team-grid {
@@ -791,7 +811,7 @@ main {
 
 /* New Patients Section */
 .new-patients-section {
-    background: var(--color-background-alt);
+    background: rgba(248, 246, 246, 0.9);
 }
 
 .new-patients-intro {
@@ -960,7 +980,7 @@ main {
 
 /* Resources Section */
 .resources-section {
-    background: var(--color-background);
+    background: rgba(255, 252, 252, 0.9);
 }
 
 .resources-grid {
@@ -1173,7 +1193,7 @@ main {
 
 /* Contact Section */
 .contact-section {
-    background: var(--color-background-alt);
+    background: rgba(248, 246, 246, 0.9);
 }
 
 .contact-content {
@@ -1427,6 +1447,52 @@ main {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-relaxed);
     margin: 0;
+}
+
+/* NCQA Certification Section */
+.ncqa-section {
+    background: rgba(255, 252, 252, 0.9);
+}
+
+.ncqa-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+}
+
+.ncqa-text {
+    flex: 1;
+}
+
+.ncqa-text p {
+    color: var(--color-text-secondary);
+}
+
+.ncqa-certificate {
+    display: flex;
+    justify-content: center;
+}
+
+.ncqa-certificate-img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-normal);
+}
+
+.ncqa-certificate a:hover .ncqa-certificate-img {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+@media (min-width: 900px) {
+    .ncqa-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* Responsive Design */
