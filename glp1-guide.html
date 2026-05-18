@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managing GLP-1 Side Effects - Primary Care of Shelton, LLC</title>
+    <meta name="description" content="Practical guidance for managing common GI side effects of GLP-1 medications, including nausea, vomiting, diarrhea, and constipation.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .glp1-hero {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-navy-light) 100%);
+            padding: var(--space-4xl) 0 var(--space-3xl);
+            color: var(--color-text-inverse);
+        }
+        .glp1-hero h1 {
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-4xl);
+            color: var(--color-text-inverse);
+            margin-bottom: var(--space-md);
+        }
+        .glp1-hero .subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-sky-blue-light);
+            max-width: 600px;
+            line-height: var(--line-height-relaxed);
+        }
+        .quick-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-3xl);
+        }
+        .quick-tip {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+        }
+        .quick-tip .tip-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: var(--space-md);
+        }
+        .quick-tip h3 {
+            color: var(--color-warm-white);
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-sm);
+        }
+        .quick-tip p {
+            color: var(--color-sky-blue-light);
+            font-size: var(--font-size-sm);
+            line-height: 1.5;
+            margin: 0;
+        }
+        .guide-body {
+            background: var(--color-background);
+            padding: var(--space-4xl) 0;
+        }
+        .how-to-box {
+            background: var(--color-sky-blue-light);
+            border-left: 4px solid var(--color-primary);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl) var(--space-2xl);
+            margin-bottom: var(--space-3xl);
+        }
+        .how-to-box h2 {
+            color: var(--color-secondary);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+        }
+        .how-to-box ol {
+            margin: 0;
+            padding-left: var(--space-xl);
+            color: var(--color-text-primary);
+            line-height: 1.8;
+        }
+        .guide-section {
+            margin-bottom: var(--space-3xl);
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: var(--color-secondary);
+            color: var(--color-warm-white);
+            border-radius: var(--radius-full);
+            padding: var(--space-xs) var(--space-lg);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-lg);
+        }
+        .section-label .num {
+            background: var(--color-primary);
+            color: var(--color-secondary);
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-xs);
+        }
+        .section-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-sm);
+        }
+        .section-card h2 {
+            font-family: var(--font-family-display);
+            color: var(--color-secondary);
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-xl);
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+        }
+        @media (max-width: 640px) {
+            .two-col { grid-template-columns: 1fr; }
+            .glp1-hero h1 { font-size: var(--font-size-3xl); }
+            .fluid-timing { flex-direction: column; }
+            .fluid-arrow { transform: rotate(90deg); }
+        }
+        .list-block h3 {
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid;
+        }
+        .list-block.good h3 {
+            color: var(--color-success);
+            border-color: var(--color-success);
+        }
+        .list-block.bad h3 {
+            color: var(--color-error);
+            border-color: var(--color-error);
+        }
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            font-size: var(--font-size-base);
+            line-height: 1.5;
+            color: var(--color-text-primary);
+        }
+        .check-list li .icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+        .good .icon { background: var(--color-success-light); color: var(--color-success); }
+        .bad  .icon { background: var(--color-error-light);   color: var(--color-error); }
+        .pattern-note {
+            background: var(--color-warning-light);
+            border-left: 4px solid var(--color-warning);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg) var(--space-xl);
+            margin-top: var(--space-xl);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+        }
+        .pattern-note strong { color: var(--color-warning); }
+        .symptom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+        .symptom-card {
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .symptom-card .symptom-header {
+            padding: var(--space-lg) var(--space-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            background: var(--color-background-alt);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .symptom-card .symptom-icon { font-size: 1.5rem; }
+        .symptom-card .symptom-header h3 {
+            margin: 0;
+            font-size: var(--font-size-lg);
+            color: var(--color-secondary);
+        }
+        .symptom-card .symptom-header p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+        .symptom-card .symptom-body {
+            padding: var(--space-xl);
+        }
+        .avoid-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+        .avoid-tag {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: var(--color-error-light);
+            border: 1px solid #FECACA;
+            border-radius: var(--radius-md);
+            padding: var(--space-sm) var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-error);
+            font-weight: var(--font-weight-medium);
+        }
+        .avoid-tag::before {
+            content: "✕";
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .fluid-timing-box {
+            background: linear-gradient(135deg, var(--color-sky-blue-light), var(--color-warm-white-off));
+            border: 1px solid var(--color-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            margin-top: var(--space-xl);
+        }
+        .fluid-timing-box h3 {
+            color: var(--color-secondary);
+            margin-bottom: var(--space-lg);
+        }
+        .fluid-timing {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin-bottom: var(--space-lg);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+        .fluid-block {
+            flex: 1;
+            padding: var(--space-xl);
+            text-align: center;
+        }
+        .fluid-block.drink {
+            background: var(--color-success-light);
+        }
+        .fluid-block.no-drink {
+            background: var(--color-error-light);
+        }
+        .fluid-block .timing-label {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+        .fluid-block.drink .timing-label { color: var(--color-success); }
+        .fluid-block.no-drink .timing-label { color: var(--color-error); }
+        .fluid-block .timing-sub {
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-sm);
+        }
+        .fluid-block.drink .timing-sub { color: var(--color-success); }
+        .fluid-block.no-drink .timing-sub { color: var(--color-error); }
+        .fluid-block .timing-desc {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+        .fluid-divider {
+            width: 1px;
+            background: var(--color-border);
+        }
+        .fluid-timing-caption {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin: 0;
+        }
+        .contact-alert {
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-navy-dark));
+            border-radius: var(--radius-lg);
+            padding: var(--space-3xl);
+            color: var(--color-text-inverse);
+            margin-top: var(--space-4xl);
+        }
+        .contact-alert h2 {
+            color: var(--color-warm-white);
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-lg);
+        }
+        .contact-alert-intro {
+            color: var(--color-sky-blue-light);
+            margin-bottom: var(--space-2xl);
+            line-height: 1.7;
+        }
+        .alert-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-2xl);
+        }
+        .alert-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+        }
+        .alert-item .alert-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-muted-rose-light);
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+        .alert-item p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+            color: var(--color-sky-blue-light);
+            line-height: 1.5;
+        }
+        .disclaimer {
+            font-size: var(--font-size-xs);
+            color: var(--color-sky-blue-light);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: var(--space-lg);
+            margin-top: var(--space-xl);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html" class="logo-link">Primary Care of Shelton</a></h1>
+                    <p class="tagline">Your Health, Our Priority</p>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="index.html#team" class="nav-link">Our Team</a></li>
+                    <li><a href="index.html#resources" class="nav-link active">Resources</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="join-us.html" class="nav-link">Join Us</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Policies</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="privacy.html" class="dropdown-link">Privacy &amp; HIPAA</a></li>
+                            <li><a href="financial-policy.html" class="dropdown-link">Financial Policy</a></li>
+                            <li><a href="medicare.html" class="dropdown-link">Medicare Resources</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+
+        <!-- Hero -->
+        <section class="glp1-hero">
+            <div class="container">
+                <p style="color: var(--color-sky-blue-light); font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-sm);">Patient Guide &mdash; GLP-1 Medication Support</p>
+                <h1>Managing GLP-1 Side Effects</h1>
+                <p class="subtitle">Practical guidance for the most common GI side effects &mdash; nausea, vomiting, diarrhea, and constipation &mdash; while on your GLP-1 medication.</p>
+                <div class="quick-tips">
+                    <div class="quick-tip">
+                        <span class="tip-icon">&#127860;</span>
+                        <h3>Smaller Meals</h3>
+                        <p>Large meals are a common trigger. Smaller portions are easier to tolerate.</p>
+                    </div>
+                    <div class="quick-tip">
+                        <span class="tip-icon">&#128167;</span>
+                        <h3>Hydrate Gently</h3>
+                        <p>Take small, steady sips instead of drinking a lot at once.</p>
+                    </div>
+                    <div class="quick-tip">
+                        <span class="tip-icon">&#9203;</span>
+                        <h3>Slow Down</h3>
+                        <p>Eat slowly and stop when satisfied, not stuffed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Body -->
+        <section class="guide-body">
+            <div class="container" style="max-width: 860px;">
+
+                <!-- How to Use This Guide -->
+                <div class="how-to-box">
+                    <h2>How to Use This Guide</h2>
+                    <ol>
+                        <li>Start with the everyday habits below.</li>
+                        <li>Move to the symptom-specific section if one problem stands out.</li>
+                        <li>If symptoms are severe, persistent, or getting worse, contact our office.</li>
+                    </ol>
+                </div>
+
+                <!-- Section 1: Eating Habits -->
+                <div class="guide-section">
+                    <div class="section-label"><span class="num">1</span> Eating Habits</div>
+                    <div class="section-card">
+                        <h2>Eating Habits</h2>
+                        <div class="two-col">
+                            <div class="list-block good">
+                                <h3>Helpful Habits</h3>
+                                <ul class="check-list good">
+                                    <li><span class="icon">&#10003;</span> Eat slowly.</li>
+                                    <li><span class="icon">&#10003;</span> Eat only when you feel truly hungry.</li>
+                                    <li><span class="icon">&#10003;</span> Use smaller portions.</li>
+                                    <li><span class="icon">&#10003;</span> Increase meal frequency if larger meals trigger symptoms.</li>
+                                    <li><span class="icon">&#10003;</span> Stop when you feel satiated.</li>
+                                </ul>
+                            </div>
+                            <div class="list-block bad">
+                                <h3>Habits to Avoid</h3>
+                                <ul class="check-list bad">
+                                    <li><span class="icon">&#10007;</span> Do not lie down right after a meal.</li>
+                                    <li><span class="icon">&#10007;</span> Avoid straws if they worsen bloating or nausea.</li>
+                                    <li><span class="icon">&#10007;</span> Avoid distracted eating &mdash; take time to savor food.</li>
+                                    <li><span class="icon">&#10007;</span> Do not be very physically active right after eating.</li>
+                                    <li><span class="icon">&#10007;</span> Avoid meals close to bedtime.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Food Choices -->
+                <div class="guide-section">
+                    <div class="section-label"><span class="num">2</span> Food Choices</div>
+                    <div class="section-card">
+                        <h2>Food Choices</h2>
+                        <div class="two-col">
+                            <div class="list-block good">
+                                <h3>Foods That Help</h3>
+                                <ul class="check-list good">
+                                    <li><span class="icon">&#10003;</span> Choose a lower-fat diet.</li>
+                                    <li><span class="icon">&#10003;</span> Try boiling, baking, oven cooking, or griddle cooking.</li>
+                                    <li><span class="icon">&#10003;</span> Take clear drinks in small sips, not too much at once.</li>
+                                    <li><span class="icon">&#10003;</span> Use water-rich foods when tolerated.</li>
+                                </ul>
+                            </div>
+                            <div class="list-block bad">
+                                <h3>Foods That May Trigger</h3>
+                                <ul class="check-list bad">
+                                    <li><span class="icon">&#10007;</span> Avoid sweets, rich dressings, and spicy foods if they worsen symptoms.</li>
+                                    <li><span class="icon">&#10007;</span> Avoid canned or heavily processed foods.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Lifestyle Support -->
+                <div class="guide-section">
+                    <div class="section-label"><span class="num">3</span> Lifestyle Support</div>
+                    <div class="section-card">
+                        <h2>Lifestyle Support</h2>
+                        <div class="list-block good">
+                            <h3>Simple Supports</h3>
+                            <ul class="check-list good">
+                                <li><span class="icon">&#10003;</span> Fresh air and light exercise may help.</li>
+                                <li><span class="icon">&#10003;</span> Keep a food diary to learn which foods are best tolerated.</li>
+                            </ul>
+                        </div>
+                        <div class="pattern-note" style="margin-top: var(--space-xl);">
+                            <strong>Common Pattern &mdash;</strong> Symptoms are often worse when eating too much, too fast, or choosing rich foods. Gentle pacing usually helps.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: Symptom-Specific -->
+                <div class="guide-section">
+                    <div class="section-label"><span class="num">4</span> Symptom-Specific Steps</div>
+                    <div class="section-card">
+                        <h2>Symptom-Specific Steps</h2>
+                        <div class="symptom-grid">
+
+                            <!-- Nausea -->
+                            <div class="symptom-card">
+                                <div class="symptom-header">
+                                    <span class="symptom-icon">&#129314;</span>
+                                    <div>
+                                        <h3>Nausea</h3>
+                                        <p>Bland foods and reducing triggers</p>
+                                    </div>
+                                </div>
+                                <div class="symptom-body">
+                                    <ul class="check-list good" style="margin-bottom: var(--space-md);">
+                                        <li><span class="icon">&#10003;</span> Try crackers, apples, mint, or ginger-based drinks about 30 minutes after your GLP-1 medication, if tolerated.</li>
+                                    </ul>
+                                    <ul class="check-list bad">
+                                        <li><span class="icon">&#10007;</span> Avoid strong smells if they trigger nausea.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Vomiting -->
+                            <div class="symptom-card">
+                                <div class="symptom-header">
+                                    <span class="symptom-icon">&#129314;</span>
+                                    <div>
+                                        <h3>Vomiting</h3>
+                                        <p>Focus on hydration and small volumes</p>
+                                    </div>
+                                </div>
+                                <div class="symptom-body">
+                                    <ul class="check-list good">
+                                        <li><span class="icon">&#10003;</span> Focus on generous hydration.</li>
+                                        <li><span class="icon">&#10003;</span> Eat more frequent meals in smaller amounts.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Diarrhea -->
+                            <div class="symptom-card">
+                                <div class="symptom-header">
+                                    <span class="symptom-icon">&#128168;</span>
+                                    <div>
+                                        <h3>Diarrhea</h3>
+                                        <p>Simple, gentle diet until improved</p>
+                                    </div>
+                                </div>
+                                <div class="symptom-body">
+                                    <ul class="check-list good" style="margin-bottom: var(--space-md);">
+                                        <li><span class="icon">&#10003;</span> Stay well hydrated with water, lemon water, or simple fluids if tolerated.</li>
+                                        <li><span class="icon">&#10003;</span> Try chicken broth, rice, carrots, ripe peeled fruit, or baked fruit.</li>
+                                    </ul>
+                                    <ul class="check-list bad">
+                                        <li><span class="icon">&#10007;</span> Avoid sports drinks if they worsen symptoms.</li>
+                                        <li><span class="icon">&#10007;</span> Avoid very high-fiber foods at first; gradually reintroduce after improvement.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Constipation -->
+                            <div class="symptom-card">
+                                <div class="symptom-header">
+                                    <span class="symptom-icon">&#128274;</span>
+                                    <div>
+                                        <h3>Constipation</h3>
+                                        <p>Food, fluid, and movement</p>
+                                    </div>
+                                </div>
+                                <div class="symptom-body">
+                                    <ul class="check-list good">
+                                        <li><span class="icon">&#10003;</span> Get enough fiber in the diet.</li>
+                                        <li><span class="icon">&#10003;</span> Increase physical activity as able.</li>
+                                        <li><span class="icon">&#10003;</span> Aim for a healthy, balanced diet.</li>
+                                        <li><span class="icon">&#10003;</span> Drink generous amounts of water and sugar-free liquids.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Also Avoid -->
+                        <div style="margin-top: var(--space-2xl);">
+                            <h3 style="color: var(--color-secondary); font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-md);">Also Avoid If Symptoms Worsen</h3>
+                            <div class="avoid-grid">
+                                <div class="avoid-tag">Dairy products</div>
+                                <div class="avoid-tag">Caffeine</div>
+                                <div class="avoid-tag">Alcohol</div>
+                                <div class="avoid-tag">Soft drinks</div>
+                                <div class="avoid-tag">Very cold foods</div>
+                                <div class="avoid-tag">Sugar-alcohol sweeteners</div>
+                            </div>
+                        </div>
+
+                        <!-- Fluid Timing -->
+                        <div class="fluid-timing-box" style="margin-top: var(--space-2xl);">
+                            <h3>&#128167; Fluid Timing for Severe Nausea or Vomiting</h3>
+                            <div class="fluid-timing">
+                                <div class="fluid-block drink">
+                                    <div class="timing-label">30&ndash;60 min</div>
+                                    <div class="timing-sub">Before Meal</div>
+                                    <p class="timing-desc">Drink fluids here</p>
+                                </div>
+                                <div class="fluid-divider"></div>
+                                <div class="fluid-block no-drink">
+                                    <div class="timing-label" style="font-size: var(--font-size-xl);">MEAL</div>
+                                    <div class="timing-sub">During Meal</div>
+                                    <p class="timing-desc">No fluids</p>
+                                </div>
+                                <div class="fluid-divider"></div>
+                                <div class="fluid-block drink">
+                                    <div class="timing-label">30&ndash;60 min</div>
+                                    <div class="timing-sub">After Meal</div>
+                                    <p class="timing-desc">Drink fluids here</p>
+                                </div>
+                            </div>
+                            <p class="fluid-timing-caption">When nausea or vomiting is severe, avoid drinking during meals. Drink 30&ndash;60 minutes before and/or after eating instead.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- When to Contact -->
+                <div class="contact-alert">
+                    <h2>When to Contact Our Office</h2>
+                    <p class="contact-alert-intro">Reach out if symptoms become severe, persistent, or worse despite the measures above. Please do not ignore ongoing vomiting, ongoing diarrhea, or signs of dehydration.</p>
+                    <div class="alert-items">
+                        <div class="alert-item">
+                            <div class="alert-dot"></div>
+                            <p>Severe or worsening symptoms</p>
+                        </div>
+                        <div class="alert-item">
+                            <div class="alert-dot"></div>
+                            <p>Ongoing vomiting or diarrhea</p>
+                        </div>
+                        <div class="alert-item">
+                            <div class="alert-dot"></div>
+                            <p>Signs of dehydration</p>
+                        </div>
+                        <div class="alert-item">
+                            <div class="alert-dot"></div>
+                            <p>Symptoms not improving with these steps</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                        <a href="https://27673-1.portal.athenahealth.com" target="_blank" rel="noopener" class="cta-button primary">Message Us via Patient Portal</a>
+                        <a href="tel:+12032250506" class="cta-button secondary" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: white;">(203) 225-0506</a>
+                    </div>
+                    <p class="disclaimer">This guide supports your care &mdash; it does not replace clinical advice. Always follow the specific plan from your prescribing clinician.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Primary Care of Shelton</h3>
+                    <div class="footer-contact">
+                        <p><strong>Phone:</strong> (203) 225-0506<br><em>For non-urgent matters, please use the <a href="https://27673-1.portal.athenahealth.com" target="_blank" rel="noopener" style="color: var(--color-primary);">Patient Portal</a></em></p>
+                        <p><strong>Fax:</strong> (203) 225-0592</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="join-us.html">Join Us</a></li>
+                        <li><a href="index.html#resources">Resources</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <div class="footer-hours">
+                        <p><strong>Monday &ndash; Friday</strong><br>8:00 AM &ndash; 4:00 PM</p>
+                        <p><em>(Closed 12:00&ndash;1:00 PM for lunch)</em></p>
+                        <p><strong>Saturday &ndash; Sunday</strong><br>Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-disclaimer">
+                    <p>&copy; 2024 Primary Care of Shelton, LLC. All rights reserved.</p>
+                    <p>This website is for informational purposes only and does not replace medical advice.</p>
+                    <p><strong>Medical Emergency? Call 911 immediately.</strong></p>
+                </div>
+                <div class="privia-info">
+                    <h4>About Privia</h4>
+                    <p>Privia is a purpose-built organization that arms physicians with key expertise in crucial practice needs such as contract negotiations, revenue cycle management, and IT support so that physicians can focus on what matters: delivering high-quality care to patients.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="financial-policy.html">Financial Policy</a>
+                    <a href="medicare.html">Medicare Resources</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
