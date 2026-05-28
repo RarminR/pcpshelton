@@ -795,6 +795,15 @@ main {
     background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
 }
 
+.member-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    box-shadow: var(--shadow-md);
+}
+
 .member-info {
     text-align: center;
 }
