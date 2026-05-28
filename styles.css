@@ -768,7 +768,7 @@ main {
 
 .team-member {
     background: var(--color-surface);
-    padding: var(--space-2xl);
+    padding: 0;
     border-radius: var(--border-radius-xl);
     border: 1px solid var(--color-border-light);
     box-shadow: var(--shadow-sm);
@@ -776,7 +776,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-xl);
+    overflow: hidden;
 }
 
 .team-member:hover {
@@ -785,29 +785,35 @@ main {
 }
 
 .member-image {
+    width: 100%;
     display: flex;
     justify-content: center;
+    padding: var(--space-2xl) var(--space-2xl) var(--space-lg);
+    background: var(--color-surface);
 }
 
 .member-image .image-placeholder {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
 }
 
 .member-photo {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: top;
+    object-position: center top;
     box-shadow: var(--shadow-md);
+    display: block;
+    margin: 0 auto;
 }
 
 .member-info {
     text-align: center;
     width: 100%;
+    padding: var(--space-lg) var(--space-2xl) var(--space-2xl);
 }
 
 .member-info h3 {
