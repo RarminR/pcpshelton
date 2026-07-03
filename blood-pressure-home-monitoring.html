@@ -306,6 +306,53 @@
             border-color: var(--color-primary);
         }
         .help-box.blue h2 { color: var(--color-secondary); }
+        .headache-ref {
+            color: var(--color-error);
+            font-weight: var(--font-weight-bold);
+            text-decoration: none;
+        }
+        .headache-ref:hover,
+        .headache-ref:focus { text-decoration: underline; }
+
+        /* Cuff-size item: bold heading on its own line */
+        .cuff-heading {
+            display: block;
+            color: var(--color-secondary);
+            margin-bottom: var(--space-xs);
+        }
+
+        /* Headache guidance */
+        .section-label-plain .num { display: none; }
+        .headache-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        .headache-list li {
+            background: var(--color-background-alt);
+            border-left: 6px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg) var(--space-xl);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--color-text-primary);
+        }
+        .headache-list li.er      { border-left-color: var(--color-error); }
+        .headache-list li.sameday { border-left-color: var(--color-warning); }
+        .headache-list li.usual   { border-left-color: var(--color-primary); }
+        .headache-backstop {
+            margin: 0;
+            padding: var(--space-lg) var(--space-xl);
+            background: var(--color-secondary);
+            color: var(--color-warm-white);
+            border-radius: var(--radius-md);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+        }
 
         /* Tips-for-success callout */
         .tips-box {
@@ -370,9 +417,20 @@
             .check-list li,
             .how-to-box p,
             .table-note-strong,
+            .cuff-heading,
+            .headache-list li,
+            .headache-backstop,
             .help-box .help-lead,
             .help-box .help-list li,
             .help-box .help-foot { font-size: 13pt !important; }
+            /* Headache backstop: dark navy on screen → black-on-white with a
+               heavy border so it still reads as the emphasized safety line. */
+            .headache-backstop {
+                background: #fff !important;
+                color: #000 !important;
+                border: 2px solid #000 !important;
+            }
+            .headache-list li { color: #000 !important; }
             .section-label {
                 background: none !important;
                 color: #000 !important;
@@ -490,7 +548,12 @@
                         <ul class="check-list good">
                             <li><span class="icon">&#10003;</span> Use an automatic (digital) upper-arm cuff monitor. Do not use wrist or finger monitors.</li>
                             <li><span class="icon">&#10003;</span> The cuff must fit your arm. The cuff bladder should wrap around at least 80% of your upper arm.</li>
-                            <li><span class="icon">&#10003;</span> <strong>Check your cuff size before you buy.</strong> Most standard cuffs fit arms up to about 17 inches (42 cm) around. If your upper arm is larger than that, you need a large or extra-large cuff. A cuff that is too small gives falsely high readings &mdash; this is the most common cause of wrong readings at home. Ask your care team which size you need.</li>
+                            <li><span class="icon">&#10003;</span>
+                                <div>
+                                    <strong class="cuff-heading">Check your cuff size before you buy</strong>
+                                    Most standard cuffs fit arms up to about 17 inches (42 cm) around. If your upper arm is larger, you need a large or extra-large cuff. A cuff that is too small gives falsely high readings &mdash; the most common cause of wrong readings at home. Ask your care team which size you need.
+                                </div>
+                            </li>
                             <li><span class="icon">&#10003;</span> Look for a validated device at <a href="https://www.validatebp.org" target="_blank" rel="noopener">www.validatebp.org</a> or ask your pharmacist.</li>
                             <li><span class="icon">&#10003;</span> Choose a monitor with built-in memory that stores your readings.</li>
                             <li><span class="icon">&#10003;</span> Bring your monitor to your visit so we can compare it with our office equipment.</li>
@@ -551,6 +614,7 @@
                             <li><span class="icon">&#10003;</span> Best timing: the week before your next appointment, or for 2 weeks after a medicine change.</li>
                             <li><span class="icon">&#10003;</span> Once your blood pressure is stable and well controlled, 1&ndash;3 days per week may be enough &mdash; ask your care team.</li>
                         </ul>
+                        <p class="table-note-strong">These home monitoring schedules are based on American Heart Association guidelines. They are guidelines, not strict rules. Do not worry about checking constantly &mdash; a few good readings around the times above are what your care team needs. Checking too often can cause needless worry.</p>
                     </div>
                 </div>
 
@@ -622,7 +686,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p class="table-note-strong">A reading in the "High" range, seen again and again, means you likely have high blood pressure (hypertension). This is something to talk about with your care team at your next visit. It is different from the urgent numbers in the "When to get help" section below, which tell you when to call sooner or get emergency care.</p>
+                        <p class="table-note-strong">A reading in the "High" range, seen again and again, means you likely have high blood pressure (hypertension). This is something to talk about with your care team at your next visit. It is different from the urgent numbers in the "When to Get Help" section below.</p>
                         <p class="table-note">These categories are a general guide. Your care team will tell you your personal target.</p>
                     </div>
                 </div>
@@ -633,15 +697,15 @@
 
                     <!-- RED: emergency -->
                     <div class="help-box red">
-                        <h2>Go to the ER now</h2>
-                        <p class="help-lead">Go to the ER or call 911 right away if you have any of these warning signs &mdash; no matter what your blood pressure number is. Do not wait to check your blood pressure. Do not call the office or send a message first.</p>
+                        <h2>Go to the ER Now</h2>
+                        <p class="help-lead">Go to the ER or call 911 right away if you have any of these warning signs &mdash; no matter what your blood pressure number is. Do not wait to check your blood pressure. Do not call the office or send a message. Go to the ER or call 911.</p>
                         <ul class="help-list">
-                            <li>Severe headache that will not go away</li>
                             <li>Chest pain or tightness</li>
                             <li>Trouble breathing or shortness of breath</li>
                             <li>Sudden weakness or numbness in the face, arm, or leg (especially on one side)</li>
                             <li>Trouble speaking or understanding words</li>
                             <li>Sudden vision changes (blurry vision, double vision, or loss of vision)</li>
+                            <li>A sudden, severe headache &mdash; the worst of your life &mdash; OR a headache with confusion, vision changes, weakness, or trouble speaking&nbsp;<a href="#headache" class="headache-ref" aria-label="See the headache section below">*</a></li>
                             <li>Severe back or stomach pain</li>
                             <li>Confusion or trouble thinking clearly</li>
                             <li>Seizures</li>
@@ -652,19 +716,34 @@
 
                     <!-- AMBER: high number, feel fine, same day -->
                     <div class="help-box amber">
-                        <h2>High number, but you feel fine (same day)</h2>
+                        <h2>High Number, But You Feel Fine (Same Day)</h2>
                         <p class="help-lead">If your blood pressure is 180/120 or higher but you feel well and have none of the warning signs above:</p>
                         <ul class="help-list">
                             <li>Sit quietly for 5 minutes, then check again.</li>
-                            <li>If it is still 180/120 or higher, call the office.</li>
-                            <li>If you do not hear back from us within 2 hours, go to an urgent care or the emergency room to be checked.</li>
+                            <li>If it is still 180/120 or higher, call the office at <a href="tel:+12032250506">203-225-0506</a>.</li>
+                            <li>If you do not hear back within 2 hours, go to an urgent care or the ER to be checked.</li>
                         </ul>
                     </div>
 
                     <!-- BLUE: still high over several days -->
                     <div class="help-box blue">
-                        <h2>Still high over several days</h2>
-                        <p class="help-lead">If your blood pressure stays above 160/100 on more than one reading over several days, send us a message through the patient portal or CallMyDoc. We will get back to you.</p>
+                        <h2>Still High Over Several Days</h2>
+                        <p class="help-lead">If your blood pressure stays above 160/100 on more than one reading over several days, send us a message through the patient portal. We will get back to you.</p>
+                    </div>
+                </div>
+
+                <!-- Headache guidance (linked from the red box asterisk) -->
+                <div class="guide-section" id="headache">
+                    <div class="section-label section-label-plain">When to Get Help &mdash; Headaches</div>
+                    <div class="section-card">
+                        <h2>What If I Have a Headache?</h2>
+                        <p style="margin-bottom: var(--space-xl); line-height: 1.7; color: var(--color-text-primary);">Not all headaches are caused by high blood pressure. Here is a simple guide:</p>
+                        <ul class="headache-list">
+                            <li class="er"><strong>Headache with a reading of 180/120 or higher AND any of these &mdash; confusion, vision changes, weakness or numbness, trouble speaking, or a seizure:</strong> go to the ER or call 911 now.</li>
+                            <li class="sameday"><strong>Headache with a reading of 180/120 or higher, but no other symptoms:</strong> rest 5 minutes and check again. If it stays that high, call the office the same day at <a href="tel:+12032250506">203-225-0506</a>.</li>
+                            <li class="usual"><strong>Headache with a reading below 180/120:</strong> this is unlikely to be from your blood pressure. Treat it as you would a usual headache. If it is severe, sudden, or unlike any headache you have had before, get medical care.</li>
+                        </ul>
+                        <p class="headache-backstop">When in doubt, or if anything feels wrong, treat it as an emergency and call 911.</p>
                     </div>
                 </div>
 
